@@ -5,15 +5,7 @@ if(!isset($_SESSION['id'])){  ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="bootstrap.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
 	
-	<link rel="stylesheet" href="css/styles.css">
 
   
 </head>
@@ -38,7 +30,7 @@ if(!isset($_SESSION['id'])){  ?>
 			</div>
 
 			<div class=" col-md-4  col-xs-12">
-				<h3>Contact Us</h3>
+				<h3>Mobile No.</h3>
 				<ul>
 					<li style="color:red;">+91-9547385308</li>
 				</ul>

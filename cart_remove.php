@@ -2,11 +2,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
@@ -27,7 +36,7 @@ $con=mysqli_connect("localhost","root","","ecommerce") or die(mysqli_error($con)
     	$user_reg="delete  from users_products where user_id= '$sid' and product_id='$product_id' LIMIT 1 ";
     	$result=mysqli_query($con, $user_reg) or die(mysqli_error($con));
         echo "<h3><center>Product Successfully deleted from Cart</center></h3>";
-        header( "refresh:1.5; url=/IS/cart.php" ); 
+        header( "refresh:1.5; url=/FS/cart.php" ); 
 ?>
 	<div align="center" style="font-size: 18px;">
 		<br><br>

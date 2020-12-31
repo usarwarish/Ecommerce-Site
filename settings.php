@@ -1,19 +1,17 @@
 <?php 
 session_start();
+
+if(isset($_SESSION['id'])){
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
 
 	<link rel="stylesheet" href="css/styles.css">
 
 </head>
-<body>
+<body style="background-color:powderblue;">
 <?php
 if(isset($_SESSION['id'])){ 
 	require 'header_logged_in.php'; 
@@ -34,15 +32,15 @@ echo "Welcome to the settings section : ".$_SESSION['name'];
 		<h2><strong> Change Password</strong> </h2>
 		<form method="post" action="sett.php">
 						<div class="form-group">
-							<input type="Password" class="form-control" name="old-pwd" placeholder="Old Password">
+							<input type="Password" class="form-control" name="old-pwd" placeholder="Old Password" required="true" pattern=".{1,}">
 						</div>
 
 						<div class="form-group">
-							<input type="Password" class="form-control" name="new-pwd" placeholder="New Password">
+							<input type="Password" class="form-control" name="new-pwd" placeholder="New Password" required="true" pattern=".{1,}">
 						</div>
 
 						<div class="form-group">	
-							<input type="Password" class="form-control" name="re-pwd" placeholder="Re-enter new Password">
+							<input type="Password" class="form-control" name="re-pwd" placeholder="Re-enter The New Password" required="true" pattern=".{1,}">
 						</div>
 
 						<div>
@@ -54,4 +52,10 @@ echo "Welcome to the settings section : ".$_SESSION['name'];
 <?php } ?>
 </body>
 </html>
+<?php }
 
+else{
+	header('location: /FS/signup.php');
+
+}
+?>

@@ -1,16 +1,13 @@
 <?php 
 session_start();
+if(!isset($_SESSION['id'])){ 
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css">
+    
 
 
 </head>
@@ -32,7 +29,7 @@ else{
 				<div class="panel-heading" style="background-color:#d3cc8d;" ><h4>WHO WE ARE</h4>
 				</div>
 				<div class="panel-body">
-					<!--put mobile pic. -->
+					
 					<img src="images\GE.png" class="center" style="display: block;margin-left: auto;margin-right: auto;">
 					<br><br>
 					<p><strong>G | E</strong> is an Indian professional eSports team that is a registered company with its CSGO, Tekken, Need For Speed, Track Mania Series, Forza Motor Sports and various other racing game squads.Formed by a team of aficionados of CSGO, the team gained recognition in the year 2010 at Chitkara bringing down the Goliaths of the game of that time! Team has just grown since then to become a leading face in the CSGO community in India with their reputation and stature preceding them.<br>At <strong>G | E</strong> we always aim for the best and no matter what the situation is we deliver.<br>Mission statement – To make a team with best of friends and enjoy the game together. Because if you enjoy each others company in game you don’t have to worry about the results.</p>
@@ -77,7 +74,7 @@ else{
 				<div class="panel-heading" style="background-color:#d3cc8d;"><h4>OPPORTUNITIES</h4>
 				</div>
 				<div class="panel-body">
-					<!--put mobile phone pics and its specifications in this box in all pannels. -->
+				
 					<img src="images\vacancy.jpg" class="center"><br><br>
 					<h4>Available Roles:</h4>
 					<ol>
@@ -104,3 +101,10 @@ else{
 </div>
 </body>
 </html>
+
+<?php }
+else{
+	header('location: /FS/home.php');
+}
+
+?>

@@ -1,69 +1,49 @@
 <?php 
-$con=mysqli_connect("localhost","root","","ecommerce") or die(mysqli_error($con));
-session_start();
-if(isset($_SESSION['id'])){ 
-	?>
+    $con=mysqli_connect("localhost","root","","ecommerce") or die(mysqli_error($con));
+    session_start();
+    if(isset($_SESSION['id'])){ 
+        
+        
+        $me=$_SESSION['id'];
+        $query1="delete from users_products where user_id = '$me' ";
+        $res=mysqli_query($con, $query1)  or die(mysqli_error($con));
+?>
 
-    <?php 
-    $me=$_SESSION['id'];
-    $query1="delete from users_products where user_id = '$me' ";
-    $res=mysqli_query($con, $query1)  or die(mysqli_error($con));
-     ?>
-
-
-<!--header-->
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-<style type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
 	
-
-</style>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body style="background-color: #000000;
-background-image: linear-gradient(147deg, #000000 0%, #04619f 74%);">
-<!--NAVBAR WITH LOGIN -->
-<div class="container-fluid" id="content">
-            <div class="navbar navbar-default navbar-fixed-top" style="background-color: #eee;">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>                        
-                        </button>
-                        <a class="navbar-brand" href="index.php">E-Store</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="myNavbar">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href = "settings.php"><span class = "glyphicon glyphicon-setting"></span> Settings </a></li>
-                            <li><a href = "index.php"><span class = "glyphicon glyphicon-log-out"></span> Logout </a></li>
-                        </ul>
-                    </div>
-                </div>
+
+<body>
+    <div class="container">
+        <div class="jumbotron" style="border: 5px solid blue; margin:20px">
+            <div style="margin: 50px;">
+                <center><p>Thank You for ordering from E-store. Your order shall be delivered<br>to you within 48 hours. <br><br><br>Order some more Electronic items <a href="home.php" style="color:orange;"> here</a>.</p></center>
             </div>
-</div>
-<div class="container" style="margin-top: 80px;">
-    <div class="jumbotron" style="border: 5px solid blue;">
-    <div style="margin: 50px;">
-	<center><p>Thank You for ordering from E-store. Your order shall be delivered<br>to you shortly. <br><br><br>Order some more Electronic items <a href="index.php"> here</a>.</p></center>
+        </div>
     </div>
-    </div>
-</div>
 
 
 </body>
-</html>
 
-
-
-<?php
-}
- ?>
+    <?php }
+    else{
+        header('Location: /FS/index.php');
+    }
+    ?>
+    </html>

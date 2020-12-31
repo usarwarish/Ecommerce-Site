@@ -19,7 +19,7 @@
         <div class="jumbotron" style="border: 5px solid blue;">
         <div style="margin: 50px;">
             <center><p>You have been sucessfully Signed Up<br><br><small>You are now being redirected..</small></p></center>
-            <?php header( "refresh:5; url=/IS/index.php" ); ?>
+            <?php header( "refresh:5; url=/FS/home.php" ); ?>
         </div>
         </div>
     </div>

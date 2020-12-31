@@ -1,4 +1,11 @@
 
+<?php
+	session_start();
+
+	if(isset($_SESSION['id'])){ 
+		header('Location: /FS/home.php');
+	}
+?>
 
 
 
@@ -6,12 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css">
+  
 
 </head>
 <body style="font-family: 'Piedra', cursive; font-family: 'Righteous', cursive; background-color: #63d471;
@@ -19,10 +21,7 @@ background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);">
 
 <?php 
 require 'header_logged_out.php';
-if(!isset($SESSION['id'])){ 
-//echo "Hello Guest";
-	require 'header_logged_out.php'
- ?>
+?>
 
 <div class="container" > 
 <div class=" row" style="margin: 80px 0px; color: #fffaf0" >
@@ -74,7 +73,7 @@ if(!isset($SESSION['id'])){
 
 <?php require 'login_modal.php'; ?>
 
-<?php } ?>
+
 
 <div style="background-color: #333; color:white ;">
 <?php require 'foot.php' ?>

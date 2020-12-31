@@ -1,4 +1,5 @@
 <?php 
+
 	$con=mysqli_connect("localhost","root","","ecommerce") or die(mysqli_error($con));
 
  	if(isset($_POST['button'])){
@@ -18,9 +19,10 @@
 			$_SESSION['name']=$row['name'];
 			$_SESSION['email'] = $email;
 			$_SESSION['password'] = $pass;
+			$_SESSION['lg']=1;
 
 
-			header("location:/IS/index.php");
+			header("location:/FS/home.php");
 		}
 		else
 		{
@@ -34,21 +36,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+<script src="bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
+
+  
   <link rel="stylesheet" href="css/styles.css">
 
-<style type="text/css">
-	
-
-</style>
 </head>
 <body>
 	<div align="center" style="font-size: 18px;">
 <p>
-<a href="index.php"><button class="btn btn-primary">Try Again</button> <br></a> or<br> <a href="signup.php"><button class="btn btn-primary">Sign Up</button></a>
+<a href="index.php"><button class="btn btn-primary">Product page</button> <br></a> or<br> <a href="signup.php"><button class="btn btn-warning">Sign Up again</button></a>
 </p>
 </div>
 </body>
@@ -60,5 +65,4 @@
 }
 
 ?>
-<!-- here we are directed after the login page --> 
 

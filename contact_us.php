@@ -1,16 +1,15 @@
 <?php 
-session_start();?>
+session_start();
 
+if(isset($_SESSION['id'])){ 
+		header('Location: /FS/home.php');
+	}
+
+	?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>E-Store | Contact Us</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-	<link rel="stylesheet" href="css/styles.css">
+	
 
 
 </head>
@@ -55,18 +54,18 @@ else{
 			<h3>CONTACT US</h3>
 			<form method="post"  action="cont.php">
 				<div class="form-group">
-					Name:<input type="text" class="form-control" name="name" placeholder="Your full Name...">
+					Name:<input type="text" class="form-control" name="name" required="true" pattern=".{1,}" placeholder="Your full Name...">
 				</div>
 
 				<div class="form-group">
-					Email Id:<input type="email" class="form-control" name="email" placeholder="Your email...">
+					Email Id:<input type="email" class="form-control" name="email" required="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Your email...">
 				</div>
 
 				<div class="form-group">
-					Message:<textarea rows="4"  class="form-control" name="message" placeholder="Your detailed query..."></textarea>
+					Message:<textarea rows="4"  class="form-control" name="message" required="true" pattern=".{1,}" placeholder="Your detailed query..."></textarea>
 				</div>
 
-					<button class="btn btn-primary" type="submit" value="Submit"  name="button">Submit</button>						
+					<button class="btn btn-primary" type="submit" value="Submit" name="king">Submit</button>						
 						</button>
 
 			</form>

@@ -11,19 +11,13 @@ session_start();
 	$select= "select * from users_products where user_id='$temp' order by product_id asc ";
     $select_qrray=mysqli_query($con, $select) or die(mysqli_error($con));
     $num_r=mysqli_num_rows($select_qrray);
-	//echo $_SESSION['id'];
-	//echo mysqli_num_rows($select_qrray);
 	
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
 
 <style type="text/css">
 	
@@ -31,7 +25,8 @@ session_start();
 </style>
 </head>
 <body style="font-family: 'Piedra', cursive; font-family: 'Righteous', cursive; background-color: #5de6de;
-background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);">
+background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);   margin-bottom: 25px;
+">
 
 	<div class="container" style="margin-top: 80px; ">
 		<div class="row " style="display: flex;
@@ -82,9 +77,9 @@ background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);">
         <ul class="list-group mb-3">
             <li class="list-group-item d-flex justify-content-between lh-condensed" style="padding: 20px 40px;">
                 <div>
-                <a href="cart_remove.php?product_id=<?=$row['product_id']?> " class="btn btn-danger btn-xs" role="button" style="float:right; color:white; margin:-10px -20px">(X)</a>
+                <a href="cart_remove.php?product_id=<?=$row['product_id']?> " class="btn btn-danger btn-xs" role="button" style="float:right; color:white; margin:-10px -20px">X</a>
 
-					<!--<a href="cart_remove.php?product_id=<?//=$row['product_id']?> "  style="float:right; color:red; margin:-10px -20px">(X)</a>-->
+					
 				</div>
                 <div>
                     <h4 class="text-muted">ITEM NO : <?php echo $ctr++;?></h4>
@@ -131,18 +126,24 @@ background-image: linear-gradient(315deg, #5de6de 0%, #b58ecc 74%);">
 			echo "<a href='success.php' type='button' class='btn btn-primary btn-lg btn-block'> Place Order </a>";
             }
             else{
-                echo "<a href='index.php' type='button' class='btn btn-danger btn-lg'> Add Items To Cart </a>";
+                echo "<a href='home.php' type='button' class='btn btn-danger btn-lg'> Add Items To Cart </a>";
         
             }
             echo "</center>";
             ?>
-	         <!-- cart after this step should again become empty.-->
+	         
 
 
 
-		<?php } ?>
+        <?php } 
+        
+        else{
+            header('location: /FS/signup.php');
+
+        }
+        ?>
         </div>
         </div>
-	</div><!-- container closed-->
+	</div>
 </body>
 </html>

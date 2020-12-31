@@ -17,16 +17,21 @@
 
 <!DOCTYPE html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <script src="bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-<style type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Piedra&family=Righteous&display=swap" rel="stylesheet">
 	
-
-</style>
+	<link rel="stylesheet" href="css/styles.css">
 
 </head>
 
@@ -36,7 +41,7 @@
         <div class="jumbotron" style="border: 5px solid blue;">
         <div style="margin: 50px;">
             <center><p><strong> Thank you for contacting us.<br>Our Representative will contact you soon. <br>P.S. : Usual reply time is max 3hrs </strong></p></center>
-            <?php header( "refresh:8; url=/IS/index.php" ); ?>
+            <?php header( "refresh:8; url=/FS/index.php" ); ?>
         </div>
         </div>
     </div>
